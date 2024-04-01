@@ -119,6 +119,14 @@ a {
   align-items: center;
 }
 
+/* .login-screen .loginscreen-container .left-column {
+  background-image: url(../../public/blob.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid #30d667;
+} */
+
 .login-screen .left-column img {
   width: 100%;
 }
@@ -141,7 +149,7 @@ a {
 }
 
 .form .form-details {
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   width: 95%;
 }
 
@@ -201,9 +209,20 @@ form .form-foot a {
   text-decoration: underline;
 }
 
+form .remember {
+  display: flex;
+}
+
 input[type="checkbox"] {
   accent-color: #30d667;
+
   margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+input[type="checkbox"]:checked {
+  color: red; /* Change color of the checkmark */
 }
 
 .form-error-message {
@@ -214,9 +233,24 @@ input[type="checkbox"] {
   height: 4vh;
 }
 
+.form-warning {
+  font-size: 12px;
+  margin-top: 10px;
+  width: 100%;
+  overflow-wrap: break-word;
+  height: 4vh;
+}
+
 form .form-details .error-style {
   border: 1px solid #ff574d;
   width: 100%;
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .hidden-text {
@@ -228,7 +262,7 @@ form .form-details .error-style {
 
 form .no-account {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 form .no-account a {
@@ -243,7 +277,7 @@ form .or {
   align-items: center;
   justify-content: space-around;
   gap: 15px;
-  margin: 30px 0;
+  margin: 15px 0;
 }
 
 form .or .line {

@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import logo from "../../public/logo.png";
-import google from "../../public/google.png";
+import logo from "../../../public/logo.png";
+import google from "../../../public/google.png";
 import { Eye, EyeOff } from "@geist-ui/icons";
 import { Spinner } from "@geist-ui/core";
 import Link from "next/link";
 
-function Login() {
-  //   const navigate = useNavigate();
+export default function SignUp() {
   // React States
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [showPassword, setShowPassword] = useState(false);
+  const [fullName, setFullName] = useState("");
   const [formData, setFormData] = useState({
     school_id: "",
     password: "",
@@ -36,8 +36,7 @@ function Login() {
     if (!formData.password.trim()) {
       newErrors.password = "Password is required";
     } else if (formData.password.length < 6) {
-      newErrors.password =
-        "Incorrect password. Password must be at least 6 characters. Please check and try again.";
+      newErrors.password = "Password must be at least 6 characters.";
     } else if (
       !/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@_])[A-Za-z\d@_]/.test(
         formData.password
@@ -93,12 +92,6 @@ function Login() {
     } else {
       console.log("Form validation error!");
     }
-
-    if (formData.rememberMe) {
-      localStorage.setItem("userInfo", JSON.stringify(formData));
-    } else {
-      localStorage.removeItem("userInfo");
-    }
   }
 
   // Form Input Check
@@ -124,17 +117,6 @@ function Login() {
     }));
   };
 
-  // Store User Info In LocalStorage (CheckBox)
-  useEffect(() => {
-    // Retrieve stored user info when the component mounts
-    const storedUserInfo = localStorage.getItem("userInfo");
-
-    if (storedUserInfo) {
-      const parsedUserInfo = JSON.parse(storedUserInfo);
-      setFormData(parsedUserInfo);
-    }
-  }, []);
-
   const handleCheckBoxChange = (e) => {
     const { name, checked } = e.target;
     setFormData((prevData) => ({
@@ -154,10 +136,31 @@ function Login() {
           className="logo"
         />
 
-        <h3 className="mb-4 fw-bold">Sign In To Nextie</h3>
+        <h3 className="">Sign Up For Nextie</h3>
       </div>
 
       <form className="form" onSubmit={handleValidationOfForm}>
+        <div className="form-details">
+          <label htmlFor="name" className="">
+            Full Name
+          </label>
+          <input
+            type="name"
+            name="name"
+            id="name"
+            autoComplete="false"
+            placeholder="Enter your full name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            className={`${!fullName ? "error-style" : ""}`}
+          />
+          {!fullName ? (
+            <div className="form-error-message">This field is required!</div>
+          ) : (
+            <div className="hidden-text form-error-message">Hidden</div>
+          )}
+        </div>
+
         <div className="form-details">
           <label htmlFor="email" className="">
             Email
@@ -167,7 +170,7 @@ function Login() {
             name="email"
             id="email"
             autoComplete="false"
-            placeholder="Enter email"
+            placeholder="name@example.com"
             value={formData.email || ""}
             onChange={handleInputChange}
             className={`${errors.email ? "error-style" : ""}`}
@@ -190,7 +193,7 @@ function Login() {
           >
             <input
               type={showPassword ? "text" : "password"}
-              placeholder="Enter password"
+              placeholder="Enter your password"
               name="password"
               id="password"
               value={formData.password || ""}
@@ -216,7 +219,9 @@ function Login() {
           {errors.password ? (
             <div className="form-error-message">{errors.password}</div>
           ) : (
-            <div className="hidden-text form-error-message">Hidden</div>
+            <div className="form-warning">
+              Use 8 or more characters with a mix of letters, numbers & symbols
+            </div>
           )}
         </div>
 
@@ -224,39 +229,40 @@ function Login() {
           <div className="remember">
             <input
               type="checkbox"
-              id="rememberMe"
-              name="rememberMe"
+              id="agreeTerms"
+              name="agreeTerms"
               checked={formData.rememberMe}
               onChange={handleCheckBoxChange}
             />
-            <label htmlFor="rememberMe">Remember me</label>
-          </div>
-
-          <div className="forgot">
-            <a>Forgot Password</a>
+            <label htmlFor="agreeTerms">
+              By creating an account, I agree to Nextie's{" "}
+              <strong>Terms of use and Privacy policy</strong>
+            </label>
           </div>
         </div>
 
         <button
           className={` ${
-            errors.email || errors.password ? "login-btn-error" : "login-btn"
+            errors.email || errors.password || !fullName
+              ? "login-btn-error"
+              : "login-btn"
           }`}
           onClick={(e) => handleValidationOfForm(e)}
         >
           {loading ? (
             <span className="spinner">
               <Spinner color="#fff" />
-              Signing In
+              Creating account
             </span>
           ) : (
-            "Sign In"
+            "Create account"
           )}
         </button>
 
         <p className="no-account">
-          Don’t have an account?{" "}
+          Already have an account?{" "}
           <span>
-            <Link href={"/create-account"}>Sign Up</Link>
+            <Link href={"/"}>Sign In</Link>
           </span>
         </p>
 
@@ -270,11 +276,9 @@ function Login() {
           <span>
             <Image src={google} />
           </span>
-          <span>Sign in with Google</span>
+          <span>Sign up with Google</span>
         </button>
       </form>
     </div>
   );
 }
-
-export default Login;
