@@ -86,7 +86,7 @@ export default function LoginHelp() {
 
             <Spacer />
             <Text p>
-              Don't have an account? <a href="#"> Sign Up</a>
+              Don&apos;t have an account? <a href="#"> Sign Up</a>
             </Text>
             <Spacer />
             <Button type="success-light" width="100%" icon={<span>🌐</span>}>

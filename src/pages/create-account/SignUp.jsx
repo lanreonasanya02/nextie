@@ -235,7 +235,7 @@ export default function SignUp() {
               onChange={handleCheckBoxChange}
             />
             <label htmlFor="agreeTerms">
-              By creating an account, I agree to Nextie's{" "}
+              By creating an account, I agree to Nextie&apos;s{" "}
               <strong>Terms of use and Privacy policy</strong>
             </label>
           </div>
