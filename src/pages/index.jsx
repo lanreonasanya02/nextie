@@ -3,7 +3,8 @@ import Image from "next/image";
 import img from "../../public/login.gif";
 import { Inter } from "next/font/google";
 // import styles from "@/styles/Home.module.css";
-import Login from "./Login";
+// import Login from "./Login";
+import LoginHelp from "./LoginHelp";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +25,7 @@ export default function Home() {
           </div>
 
           <div className="text-start">
-            <Login />
+            <LoginHelp />
           </div>
         </div>
       </section>
