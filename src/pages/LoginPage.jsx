@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import { Text, Input, Button, Checkbox, Spacer, Card } from "@geist-ui/react";
+import { Text, Input, Button, Checkbox, Spacer, Card } from "@geist-ui/core";
+import { Lock, Mail } from "@geist-ui/icons";
+import { useRouter } from "next/router";
 import { useMediaQuery } from "@geist-ui/react";
 import Link from "next/link";
 import Image from "next/image";
-import signup from "../../../public/left-sign-up.gif";
-import google from "../../../public/google.png";
-import logo from "../../../public/logo.png";
-import { Lock, Mail } from "@geist-ui/icons";
+import login from "../../public/left-image.gif";
+import google from "../../public/google.png";
+import logo from "../../public/logo.png";
 
-export default function SignUp({ onChanged }) {
+export default function LoginPage({ onChanged }) {
   const isMobile = useMediaQuery("mobile");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMail, setErrorMail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
+  const router = useRouter();
 
   const validateLogin = () => {
     const uppercaseRegex = /[A-Z]/;
@@ -59,10 +61,9 @@ export default function SignUp({ onChanged }) {
         <div className="left-container">
           {/* Content here will be for the left side with the image and welcome text */}
           <Image
-            src={signup}
-            alt="events.svg"
+            src={login}
             priority={true}
-            unoptimized={true}
+            alt="events.svg"
             width={700}
             height={700}
           />
@@ -76,11 +77,13 @@ export default function SignUp({ onChanged }) {
             alt="logo"
             className="logo"
           />
-
           <div className="right-container-card">
+            {/* <Card width={isMobile ? "100%" : "600px"}> */}
             <div className="card">
-              <Text h3>Sign Up For Nextie</Text>
+              <Text h3>Sign In to Nextie</Text>
+
               <Spacer />
+
               <Input
                 clearable
                 label={<Mail color="#30D667" />}
@@ -94,7 +97,9 @@ export default function SignUp({ onChanged }) {
                   {errorMail}
                 </Text>
               )}
+
               <Spacer />
+
               <Input.Password
                 clearable
                 label={<Lock color="#30D667" />}
@@ -119,21 +124,17 @@ export default function SignUp({ onChanged }) {
 
               <Spacer />
 
-              <button
-                className="btn"
-                // onClick={() => router.push("#")}
-              >
-                Create Account
+              <button className="btn" onClick={() => router.push("./events")}>
+                Sign In
               </button>
 
               <Spacer />
               <Text p>
-                Already have an account?{" "}
+                Don&apos;t have an account?{" "}
                 <Link href="#" onClick={switchAuth}>
-                  Sign In
+                  Sign Up
                 </Link>
               </Text>
-
               <Spacer />
 
               <button
@@ -145,9 +146,10 @@ export default function SignUp({ onChanged }) {
                 <span>
                   <Image src={google} alt="Google icon" />
                 </span>
-                <span>Sign up with Google</span>
+                <span>Sign in with Google</span>
               </button>
             </div>
+            {/* </Card> */}
           </div>
         </div>
       </div>

@@ -1,14 +1,15 @@
+import { useState } from "react";
 import Head from "next/head";
-import Image from "next/image";
-import img from "../../public/login.gif";
+import LoginPage from "@/pages/LoginPage";
+import SignUp from "./create-account";
 import { Inter } from "next/font/google";
 // import styles from "@/styles/Home.module.css";
-// import Login from "./Login";
-import LoginHelp from "./LoginHelp";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [isRouteChanged, setIsRouteChanged] = useState(false);
+
   return (
     <>
       <Head>
@@ -18,17 +19,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className={`login-screen ${inter.className}`}>
-        <div className="loginscreen-container">
-          <div className="left-column text-center">
-            <Image src={img} alt="events.svg" width={700} height={700} />
-          </div>
-
-          <div className="text-start">
-            <LoginHelp />
-          </div>
-        </div>
-      </section>
+      {isRouteChanged ? (
+        <SignUp onChanged={setIsRouteChanged} />
+      ) : (
+        <LoginPage onChanged={setIsRouteChanged} />
+      )}
     </>
   );
 }
