@@ -6,7 +6,7 @@ import Image from "next/image";
 import signup from "../../../public/left-sign-up.gif";
 import google from "../../../public/google.png";
 import logo from "../../../public/logo.png";
-import { Lock, Mail } from "@geist-ui/icons";
+import { Lock, Mail, User } from "@geist-ui/icons";
 
 export default function SignUp({ onChanged }) {
   const isMobile = useMediaQuery("mobile");
@@ -56,18 +56,6 @@ export default function SignUp({ onChanged }) {
   return (
     <>
       <div className="container">
-        <div className="left-container">
-          {/* Content here will be for the left side with the image and welcome text */}
-          <Image
-            src={signup}
-            alt="events.svg"
-            priority={true}
-            unoptimized={true}
-            width={700}
-            height={700}
-          />
-        </div>
-
         <div className="right-container">
           <Image
             src={logo}
@@ -80,7 +68,24 @@ export default function SignUp({ onChanged }) {
           <div className="right-container-card">
             <div className="card">
               <Text h3>Sign Up For Nextie</Text>
+
               <Spacer />
+
+              <Input
+                clearable
+                label={<User color="#30D667" />}
+                width="100%"
+                placeholder="John Smith Doe"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              {errorMail && (
+                <Text span small type="error">
+                  {errorMail}
+                </Text>
+              )}
+              <Spacer />
+
               <Input
                 clearable
                 label={<Mail color="#30D667" />}
@@ -90,11 +95,13 @@ export default function SignUp({ onChanged }) {
                 onChange={(e) => setEmail(e.target.value)}
               />
               {errorMail && (
-                <Text span type="error">
+                <Text span small type="error">
                   {errorMail}
                 </Text>
               )}
+
               <Spacer />
+
               <Input.Password
                 clearable
                 label={<Lock color="#30D667" />}
@@ -104,17 +111,22 @@ export default function SignUp({ onChanged }) {
                 onChange={(e) => setPassword(e.target.value)}
               />
               {errorPassword && (
-                <Text span type="error">
+                <Text span small type="error">
                   {errorPassword}
                 </Text>
               )}
+
+              <Text span small type="warning">
+                Use 8 or more characters with a mix of letters, numbers &
+                symbols
+              </Text>
               <Spacer />
 
               <div className="remember-forgot">
-                <Checkbox checked={true}>Remember me</Checkbox>
-                <Link href="#" className="forgot">
-                  Forgot Password
-                </Link>
+                <Checkbox checked={true}>
+                  By creating an account, I agree to our Terms of use and
+                  Privacy Policy{" "}
+                </Checkbox>
               </div>
 
               <Spacer />
@@ -134,12 +146,17 @@ export default function SignUp({ onChanged }) {
                 </Link>
               </Text>
 
+              <div className="or">
+                <div className="line"></div>
+                <div>OR</div>
+                <div className="line"></div>
+              </div>
+
               <Spacer />
 
               <button
                 width="100%"
                 className="btn-nobg"
-                // iconLeft={}
                 // onClick={switchAuth}
               >
                 <span>
@@ -150,6 +167,18 @@ export default function SignUp({ onChanged }) {
             </div>
           </div>
         </div>
+
+        <div className="left-container">
+          {/* Content here will be for the left side with the image and welcome text */}
+          <Image
+            src={signup}
+            alt="events.svg"
+            priority={true}
+            unoptimized={true}
+            width={700}
+            height={700}
+          />
+        </div>
       </div>
 
       <style jsx>{`
@@ -159,7 +188,7 @@ export default function SignUp({ onChanged }) {
           justify-content: center;
           gap: 50px;
           padding: 50px;
-          height: 80lvh;
+          height: 90lvh;
           background-color: #fff;
         }
 
@@ -216,7 +245,7 @@ export default function SignUp({ onChanged }) {
 
         button:hover {
           color: #fff;
-          background-color: #61d287;
+          background-color: #99ecb4;
         }
 
         .remember-forgot {
@@ -229,6 +258,19 @@ export default function SignUp({ onChanged }) {
         .forgot {
           color: #30d667;
           border: 1px solid red;
+        }
+
+        .or {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          gap: 15px;
+          margin: 15px 0;
+        }
+
+        .line {
+          border-bottom: 1px solid #b4afaf;
+          width: 100%;
         }
       `}</style>
     </>

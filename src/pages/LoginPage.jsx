@@ -93,7 +93,7 @@ export default function LoginPage({ onChanged }) {
                 onChange={(e) => setEmail(e.target.value)}
               />
               {errorMail && (
-                <Text span type="error">
+                <Text span small type="error">
                   {errorMail}
                 </Text>
               )}
@@ -109,7 +109,7 @@ export default function LoginPage({ onChanged }) {
                 onChange={(e) => setPassword(e.target.value)}
               />
               {errorPassword && (
-                <Text span type="error">
+                <Text span small type="error">
                   {errorPassword}
                 </Text>
               )}
@@ -135,12 +135,20 @@ export default function LoginPage({ onChanged }) {
                   Sign Up
                 </Link>
               </Text>
+
+              <Spacer />
+
+              <div className="or">
+                <div className="line"></div>
+                <div>OR</div>
+                <div className="line"></div>
+              </div>
+
               <Spacer />
 
               <button
                 width="100%"
                 className="btn-nobg"
-                // iconLeft={}
                 // onClick={switchAuth}
               >
                 <span>
@@ -161,7 +169,7 @@ export default function LoginPage({ onChanged }) {
           justify-content: center;
           gap: 50px;
           padding: 50px;
-          height: 80lvh;
+          height: 90lvh;
           background-color: #fff;
         }
 
@@ -218,7 +226,7 @@ export default function LoginPage({ onChanged }) {
 
         button:hover {
           color: #fff;
-          background-color: #61d287;
+          background-color: #99ecb4;
         }
 
         .remember-forgot {
@@ -231,6 +239,19 @@ export default function LoginPage({ onChanged }) {
         .forgot {
           color: #30d667;
           border: 1px solid red;
+        }
+
+        .or {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          gap: 15px;
+          margin: 15px 0;
+        }
+
+        .line {
+          border-bottom: 1px solid #b4afaf;
+          width: 100%;
         }
       `}</style>
     </>
