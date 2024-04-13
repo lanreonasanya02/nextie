@@ -63,6 +63,7 @@ export default function LoginPage({ onChanged }) {
           <Image
             src={login}
             priority={true}
+            unoptimized={true}
             alt="events.svg"
             width={700}
             height={700}
@@ -135,8 +136,6 @@ export default function LoginPage({ onChanged }) {
                   Sign Up
                 </Link>
               </Text>
-
-              <Spacer />
 
               <div className="or">
                 <div className="line"></div>

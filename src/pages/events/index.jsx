@@ -1,16 +1,34 @@
-import Head from "next/head";
+import Navbar from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
+import Link from "next/link";
+// import { Badge, Card, Page, Spacer, Text } from "@geist-ui/core";
 
 export default function Events() {
   return (
-    <div>
-      <Head>
-        <title>Nextie - Plan Your Next Events With Us</title>
-        <meta name="keywords" content="Events" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <>
+      <Sidebar />
+      <Navbar
+        title={"My Events"}
+        description={
+          "With our easy-to-use tools and customizable features, you can design, promote, and manage your event with confidence"
+        }
+      />
 
-      <div>Events</div>
-    </div>
+      <div className="events-page">
+        <h2>Welcome back! </h2>
+      </div>
+
+      <style jsx>{`
+        .events-page {
+          margin-left: 251px;
+          padding: 30px;
+        }
+
+        h2 {
+          font-size: 32px;
+          font-weight: 700;
+        }
+      `}</style>
+    </>
   );
 }

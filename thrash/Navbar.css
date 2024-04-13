@@ -1,0 +1,133 @@
+nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 20px 25px 13px;
+  border-bottom: 1px solid #dde1e6;
+  width: 100%;
+  position: fixed;
+  background-color: #fff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+nav .navbar-logo {
+  display: flex;
+  align-items: last baseline;
+  /* align-items: center; */
+  gap: 10px;
+}
+
+nav .navbar-logo img {
+  width: 30%;
+}
+
+nav .navbar-logo span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+nav .search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #f7f9fb;
+  width: 70%;
+  margin: auto;
+  border-style: none;
+}
+
+nav .search .search-icon {
+  padding-left: 5px;
+}
+
+nav .search input {
+  border-style: none;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  background: #f7f9fb;
+  font-size: 14px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+nav .icons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+nav .icons .icon {
+  margin-right: 10px;
+}
+
+nav .icons .split-icons {
+  margin-right: 25px;
+}
+
+nav .icons .other-icons {
+  background: #f7f9fb;
+  border-radius: 16px;
+  padding: 8px 12px;
+  position: relative;
+  text-align: center;
+}
+
+nav .icons .user {
+  background: #dcecec;
+  padding: 2px 10px;
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+nav .icons .user-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 50%;
+}
+
+nav .icons .user-info {
+  color: #405855;
+  line-height: 0;
+  font-size: 11px;
+}
+
+nav .icons .user-name {
+  font-size: 16px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+}
+
+nav .icons .icon .chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  color: #fff;
+  background-color: #fb7b7b;
+  border-radius: 50%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+nav .icons .icon .notifications {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  position: absolute;
+  bottom: 30px;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  background: #26d137;
+  border-radius: 50%;
+}

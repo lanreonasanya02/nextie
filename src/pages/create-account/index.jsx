@@ -10,6 +10,7 @@ import { Lock, Mail, User } from "@geist-ui/icons";
 
 export default function SignUp({ onChanged }) {
   const isMobile = useMediaQuery("mobile");
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMail, setErrorMail] = useState("");
@@ -76,8 +77,8 @@ export default function SignUp({ onChanged }) {
                 label={<User color="#30D667" />}
                 width="100%"
                 placeholder="John Smith Doe"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
               />
               {errorMail && (
                 <Text span small type="error">
@@ -169,7 +170,6 @@ export default function SignUp({ onChanged }) {
         </div>
 
         <div className="left-container">
-          {/* Content here will be for the left side with the image and welcome text */}
           <Image
             src={signup}
             alt="events.svg"

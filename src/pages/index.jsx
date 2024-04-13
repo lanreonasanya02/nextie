@@ -15,6 +15,10 @@ export default function Home() {
       <Head>
         <title>Nextie - Plan Your Next Events With Us</title>
         <meta name="keywords" content="Events" />
+        <meta
+          name="description"
+          content="With our easy-to-use tools and customizable features, you can design, promote and manage your event with confidence"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

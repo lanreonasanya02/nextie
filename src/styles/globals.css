@@ -335,3 +335,135 @@ form .or .line {
   width: 100%;
   font-size: 18px;
 }
+
+/* Sidebar */
+/* Custom styling for the sidebar links */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background: #fff;
+  border-right: 1px solid #efefef;
+  color: #000;
+  text-align: center;
+  box-sizing: border-box;
+  position: fixed;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar .links,
+.sidebar .bottom-links {
+  padding: 20px;
+}
+
+.sidebar .links {
+  padding-top: 30px;
+}
+
+.sidebar .bottom-links {
+  border-top: 1px solid #f1eeee;
+}
+
+.sidebar .links a,
+.sidebar .bottom-links a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 18px 25px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar .top-links .active,
+.sidebar .bottom-links .active {
+  background-color: #1e614e17;
+  color: #047857;
+  font-size: 15px;
+  font-weight: 900;
+  border-radius: 8px;
+}
+
+.sidebar .links a:hover,
+.sidebar .bottom-links a:hover {
+  background: #64caad17;
+  color: #047857;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+}
+
+.menu-link span {
+  cursor: pointer;
+}
+
+.menu-link .menu-icon {
+  margin-right: 8px;
+  /* font-family: "Plus Jakarta Sans", sans-serif; */
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.sidebar .log-out a {
+  color: #f53a51;
+}
+
+.sidebar .log-out a:hover {
+  color: #c34b59;
+}
+
+nav {
+  margin-left: 251px;
+  padding: 20px 30px;
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f1eeee;
+}
+
+nav .icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+nav .icons .other-icons {
+  background: #f7f9fb;
+  border-radius: 16px;
+  padding: 8px 12px;
+  position: relative;
+  text-align: center;
+}
+
+nav .icons .icon {
+  cursor: pointer;
+}
+
+nav .icons .icon .notifications {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  position: absolute;
+  bottom: 35px;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  background: #26d137;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50%;
+}
+
+/* .sidebar .log-out a:hover {
+  background: none;
+  border: 1px solid #f53a51;
+  border-radius: 8px;
+} */
