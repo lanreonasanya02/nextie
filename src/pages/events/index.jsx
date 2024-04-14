@@ -136,15 +136,15 @@ export default function Events() {
                   className="no-events"
                   style={{ textAlign: "center", marginTop: "20px" }}
                 >
-                  <Image src={empty} />
+                  <Image src={empty} alt="no-events-yet" />
 
                   <Text h4 mb={0}>
                     Oops! No events yet.
                   </Text>
 
                   <Text type="secondary" small>
-                    Click 'Create Event' to start organizing hassle-free
-                    gatherings!
+                    Click &apos;Create Event&apos; to start organizing
+                    hassle-free gatherings!
                   </Text>
                 </div>
               </Grid.Container>
@@ -152,7 +152,7 @@ export default function Events() {
               <Grid.Container gap={2} justify="center">
                 {events.map((event) => {
                   return (
-                    <Grid xs>
+                    <Grid xs key={event.id}>
                       <Card width="400px" style={{ cursor: "pointer" }}>
                         <Image
                           src={event.img}

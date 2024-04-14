@@ -14,7 +14,13 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="top-links ">
-        <Image src={logo} width={300} height={90} placeholder="blur" />
+        <Image
+          src={logo}
+          width={300}
+          height={90}
+          placeholder="blur"
+          alt="logo-image"
+        />
 
         <div className="links">
           <Link
