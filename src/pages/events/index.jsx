@@ -1,12 +1,25 @@
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
-import { Card, Dot, Grid, Input, Spacer, Text } from "@geist-ui/core";
-import { Calendar, Plus, Search } from "@geist-ui/icons";
+import {
+  Avatar,
+  Card,
+  Dot,
+  Grid,
+  Input,
+  Popover,
+  Spacer,
+  Text,
+} from "@geist-ui/core";
+import { Calendar, MoreHorizontal, Plus, Search } from "@geist-ui/icons";
 import Image from "next/image";
-import { events } from "@/services/Data";
+import avatar from "../../../public/avatar.png";
 import empty from "../../../public/no-event.png";
+import { events } from "@/services/Data";
+import getPopOverContent from "@/utils/getPopOverContent";
 
 export default function Events() {
+  const content = getPopOverContent();
+
   return (
     <>
       <Sidebar />
@@ -153,13 +166,31 @@ export default function Events() {
                 {events.map((event) => {
                   return (
                     <Grid xs key={event.id}>
-                      <Card width="400px" style={{ cursor: "pointer" }}>
-                        <Image
-                          src={event.img}
-                          height="150px"
-                          width="400px"
-                          draggable={false}
-                        />
+                      <Card width="400px">
+                        <div className="card-image">
+                          <span>
+                            <Image
+                              src={event.img}
+                              height="150px"
+                              width="400px"
+                              draggable={false}
+                            />
+                          </span>
+
+                          <span className="card-image-header">
+                            <span className="category">Published</span>
+                            <span className="icon">
+                              <Popover content={content}>
+                                <MoreHorizontal
+                                  color="#fff"
+                                  title="See More"
+                                  size={30}
+                                />
+                              </Popover>
+                            </span>
+                          </span>
+                        </div>
+
                         <Text h4 mb={0}>
                           {event.title}
                         </Text>
@@ -189,6 +220,14 @@ export default function Events() {
                               <span>{event.date}</span>
                             </span>
                           </Text>
+                        </div>
+
+                        <div className="avatars">
+                          <Avatar.Group count={12}>
+                            <Avatar src={avatar} text="Ade" stacked />
+                            <Avatar src={avatar} stacked />
+                            <Avatar text="Ana" stacked />
+                          </Avatar.Group>
                         </div>
                       </Card>
                     </Grid>
@@ -273,6 +312,37 @@ export default function Events() {
           display: flex;
           align-items: "center";
           gap: 10px;
+        }
+
+        .card-image {
+          position: relative;
+        }
+
+        .card-image-header {
+          position: absolute;
+          top: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: 0 15px;
+        }
+
+        .card-image-header .category {
+          font-size: 12px;
+          color: #03543f;
+          background-color: #def7ec;
+          padding: 5px;
+          border-radius: 8px;
+          font-weight: 600;
+        }
+
+        .card-image-header .icon {
+          cursor: pointer;
+        }
+
+        .avatars {
+          margin-top: 10px;
         }
       `}</style>
     </>

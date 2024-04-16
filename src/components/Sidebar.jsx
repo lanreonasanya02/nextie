@@ -46,7 +46,7 @@ export default function Sidebar() {
       </div>
 
       <div className="bottom-links">
-        <Link
+        {/* <Link
           href="/help"
           className={`menu-link ${isActive("/help") ? "active" : ""}`}
         >
@@ -54,7 +54,7 @@ export default function Sidebar() {
             <HelpCircle size={18} className="menu-icon" />
             <span>Help</span>
           </div>
-        </Link>
+        </Link> */}
 
         <Link
           href="/settings"
