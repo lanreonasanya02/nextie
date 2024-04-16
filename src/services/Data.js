@@ -57,3 +57,5 @@ export const events = [
     date: "23 March 2024 5:00 PM GMT+1",
   },
 ];
+
+export const eventss = [];

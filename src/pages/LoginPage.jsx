@@ -117,8 +117,10 @@ export default function LoginPage({ onChanged }) {
               <Spacer />
 
               <div className="remember-forgot">
-                <Checkbox checked={true}>Remember me</Checkbox>
-                <Link href="#" className="forgot">
+                <Checkbox checked={true} style={{ accentColor: "#0E7A3E" }}>
+                  Remember me
+                </Checkbox>
+                <Link href="#" className="forgot" style={{ color: "#0E7A3E" }}>
                   Forgot Password
                 </Link>
               </div>
@@ -132,7 +134,11 @@ export default function LoginPage({ onChanged }) {
               <Spacer />
               <Text p>
                 Don&apos;t have an account?{" "}
-                <Link href="#" onClick={switchAuth}>
+                <Link
+                  href="#"
+                  onClick={switchAuth}
+                  style={{ color: "#0E7A3E" }}
+                >
                   Sign Up
                 </Link>
               </Text>

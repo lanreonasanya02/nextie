@@ -142,7 +142,11 @@ export default function SignUp({ onChanged }) {
               <Spacer />
               <Text p>
                 Already have an account?{" "}
-                <Link href="#" onClick={switchAuth}>
+                <Link
+                  href="#"
+                  onClick={switchAuth}
+                  style={{ color: "#0E7A3E" }}
+                >
                   Sign In
                 </Link>
               </Text>

@@ -16,9 +16,15 @@ import avatar from "../../../public/avatar.png";
 import empty from "../../../public/no-event.png";
 import { events } from "@/services/Data";
 import getPopOverContent from "@/utils/getPopOverContent";
+import { useRouter } from "next/router";
 
 export default function Events() {
+  const router = useRouter();
   const content = getPopOverContent();
+
+  function createNewEvent() {
+    router.push("/events/create");
+  }
 
   return (
     <>
@@ -40,7 +46,7 @@ export default function Events() {
           </div>
 
           <div>
-            <button className="create-btn">
+            <button className="create-btn" onClick={createNewEvent}>
               <span>
                 <Plus />
               </span>
