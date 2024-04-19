@@ -1,8 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import { Breadcrumbs } from "@geist-ui/core";
-import Link from "next/link";
-import React from "react";
+import CreateSteps from "./createSteps";
 
 export default function createEvent() {
   return (
@@ -30,6 +29,10 @@ export default function createEvent() {
             </Breadcrumbs>
           </div>
         </div>
+
+        <div className="create-steps">
+          <CreateSteps />
+        </div>
       </div>
 
       <style jsx>{`
@@ -38,16 +41,15 @@ export default function createEvent() {
           padding: 30px;
         }
 
-        /* .events-header,
-        .header-tools {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-        } */
-
         h2 {
           font-size: 30px;
           font-weight: 700;
+        }
+
+        .create-steps {
+          margin-top: 50px;
+          border: 1px solid #e5e7eb;
+          border-radius: 10px;
         }
       `}</style>
     </>

@@ -467,3 +467,179 @@ nav .icons .icon .notifications {
   border: 1px solid #f53a51;
   border-radius: 8px;
 } */
+
+.steps {
+  width: 800px;
+  /* background-color: #f7f7f7; */
+  border-radius: 7px;
+  padding: 25px 100px;
+  margin: 20px auto;
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.numbers .step {
+  text-align: center;
+  font-size: 14px;
+  color: #465668;
+}
+
+.numbers .step .item-number {
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+  /* background-color: #e7e7e7; */
+  /* border-radius: 50%; */
+  /* width: 20px; */
+  /* padding: 5px 10px; */
+  /* border: 1px solid #e5e7eb; */
+}
+
+.numbers .step .active {
+  /* border: 1px solid #7950f2; */
+  background-color: #fff;
+  color: #0e7a3e;
+}
+
+.numbers .step .text-active {
+  color: #0e7a3e;
+}
+
+.numbers .step .text-bold {
+  font-weight: 700;
+}
+
+.message {
+  font-size: 16px;
+  margin: 40px 0 30px;
+  padding: 20px 0;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  /* text-align: center; */
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons .hidden-btn {
+  visibility: hidden;
+}
+
+.buttons button {
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 10px;
+  width: 150px;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: 1px solid #30d667;
+}
+
+.buttons .right-btn {
+  background-color: #30d667;
+  color: #fff;
+}
+
+.buttons .left-btn {
+  background: none;
+  color: #30d667;
+}
+
+.buttons button:hover {
+  background-color: #68ea94;
+  color: #fff;
+}
+
+.buttons button span {
+  font-size: 16px;
+  line-height: 1;
+}
+
+h3 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Basic Info */
+.basic-info-container form {
+  margin-top: 20px;
+  padding: 10px 40px;
+}
+
+.basic-info-container form .event {
+  margin-bottom: 20px;
+}
+
+.basic-info-container form label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #111928;
+}
+
+.basic-info-container form .radios label {
+  display: inline;
+  font-weight: 400;
+}
+
+.basic-info-container form .event-name input {
+  width: 95%;
+  padding: 15px;
+  outline: none;
+  border-style: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.basic-info-container form .event-type .event-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.basic-info-container form .event-type .event-buttons button {
+  width: 150px;
+  padding: 20px;
+  border-style: none;
+  border: 1px solid #66666659;
+  border-radius: 10px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.basic-info-container form .event-type .event-buttons .active-btn {
+  border: 1px solid #1db762;
+  color: #1db762;
+}
+
+.basic-info-container form .event .select {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.basic-info-container form .event .select select {
+  padding: 15px;
+  width: 90%;
+  outline: none;
+  border-style: none;
+}
+
+.basic-info-container form .dates {
+  display: flex;
+  justify-content: space-between;
+}
