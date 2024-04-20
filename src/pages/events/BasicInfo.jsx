@@ -12,7 +12,7 @@ export default function BasicInfo() {
         <div className="basic-info">
           <h4>Basic Details</h4>
           <span>
-            Let's start with the basics! Enter key details about your event
+            Let&apos;s start with the basics! Enter key details about your event
           </span>
         </div>
 

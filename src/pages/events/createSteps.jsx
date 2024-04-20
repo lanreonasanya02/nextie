@@ -12,12 +12,15 @@ export default function CreateSteps() {
 
 function Steps() {
   const [step, setStep] = useState(1);
-  //   const [isOpen, setIsOpen] = useState(true);
 
   const messages = [
+    // eslint-disable-next-line react/jsx-key
     <BasicInfo />,
+    // eslint-disable-next-line react/jsx-key
     "Apply for jobs 💼",
+    // eslint-disable-next-line react/jsx-key
     "Invest your new income 🤑",
+    // eslint-disable-next-line react/jsx-key
     "Come home and play",
   ];
 
